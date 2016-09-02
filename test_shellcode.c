@@ -19,8 +19,6 @@ int main(int argc, char** argv) {
 	strcpy(code, argv[1]);
 	printf("Trying %lu bytes long shellcode ..\n", strlen(code));
 
-	seteuid(1000);
-
 	fp = (void *)code;
 	fp();
 
