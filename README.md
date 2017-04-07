@@ -1,7 +1,5 @@
 # Shellcode
 
-I wrote the shellcode I publish here while reading the book "Hacking - The art of exploitation" by Jon Erickson.
-Unlike the shellcode in the book, this shellcode is for the x64 processor architecture.
-I would really appreciate any improvements.
+x64 shellcode intel syntax needed for John Erickson - The art of Exploitation
 
-Den shellcode, den ich hier veröffentliche, schreibe ich, während ich das Buch "Hacking - Die Kunst des Exploits" von Jon Erickson lese. Allerdings ist dieser shellcode für x64 Prozessoren und nicht wie der im Buch beigelegte shellcode für x86 Prozessoren. Verbesserungsvorschläge sind natürlich willkommen :)
+https://www.amazon.de/Hacking-Die-Kunst-Exploits-mit/dp/3898645363/ref=sr_1_2?ie=UTF8&qid=1491562103&sr=8-2&keywords=hacking+the+art+of+exploitation
